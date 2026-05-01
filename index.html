@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豆瓣电影深度挖掘 | 导演矩阵·年代旭日·口碑仪表盘</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #0a0f1e 0%, #0e1a2a 100%);
+            color: #f0f3f8;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 2rem 4rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(120deg, #ffb347, #ff6b6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        .subhead {
+            font-size: 1.2rem;
+            color: #a0b3d9;
+            max-width: 700px;
+            margin: 0 auto;
+            border-bottom: 1px solid #2a3a55;
+            padding-bottom: 1rem;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .stat-badge {
+            background: rgba(30, 45, 70, 0.6);
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .card {
+            background: rgba(18, 28, 45, 0.8);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 45px -15px rgba(0,0,0,0.6);
+            border-color: rgba(255,180,70,0.3);
+        }
+        .card-img {
+            height: 200px;
+            background: linear-gradient(145deg, #1e2a3e, #0f1722);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            border-bottom: 1px solid #2a3a55;
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        .card p {
+            color: #b9c7e0;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,180,70,0.15);
+            border: 1px solid #ffb347;
+            color: #ffb347;
+            padding: 0.6rem 1.3rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: #ffb347;
+            color: #0a0f1e;
+            border-color: #ffb347;
+        }
+        .code-block {
+            background: #0c1320;
+            border-radius: 18px;
+            padding: 1.2rem;
+            margin: 2rem 0;
+            border-left: 4px solid #ffb347;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #1f2c3e;
+            font-size: 0.85rem;
+            color: #6a7e9e;
+        }
+        a {
+            color: inherit;
+        }
+        @media (max-width: 720px) {
+            .container { padding: 1rem; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 豆瓣电影深度挖掘</h1>
+            <div class="subhead">Top250 硬核数据分析 · 导演权力矩阵 · 年代题材流变 · 短评情感NLP</div>
+            <div class="stats">
+                <span class="stat-badge">📊 250 部顶级影片</span>
+                <span class="stat-badge">🎞️ 横跨 90 年影史</span>
+                <span class="stat-badge">🧠 600+ 条语义分析</span>
+            </div>
+        </header>
+
+        <div class="grid">
+            <!-- 卡片1：导演矩阵 -->
+            <div class="card">
+                <div class="card-img">🎥</div>
+                <div class="card-content">
+                    <h3>导演权力矩阵</h3>
+                    <p>基于入榜作品数量 & 平均评分，揭示“神级导演”集群。气泡越大，统治力越强。</p>
+                    <a href="director_matrix.html" class="btn" target="_blank">查看动态图 →</a>
+                </div>
+            </div>
+
+            <!-- 卡片2：年代旭日图 -->
+            <div class="card">
+                <div class="card-img">🌀</div>
+                <div class="card-content">
+                    <h3>时空透视 · 旭日图</h3>
+                    <p>十年年代 → 题材类型 → 具体电影，颜色代表评分，大小由评价人数决定。可下钻探索。</p>
+                    <a href="era_sunburst.html" class="btn" target="_blank">交互式发现 →</a>
+                </div>
+            </div>
+
+            <!-- 卡片3：口碑仪表盘 -->
+            <div class="card">
+                <div class="card-img">📈</div>
+                <div class="card-content">
+                    <h3>情感分析仪表盘</h3>
+                    <p>对比多部经典电影的短评情感得分、争议度、差评词云，LLM 驱动的细粒度挖掘。</p>
+                    <a href="dashboard.html" class="btn" target="_blank">查看完整报告 →</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+            <div class="code-block">
+                📌 项目亮点<br>
+                • 爬取豆瓣 Top250 + 短评（断点续抓）<br>
+                • Plotly 动态可视化 + 旭日图下钻<br>
+                • 调用 LLM 进行短评情感与争议分析<br>
+                • 所有结果静态部署，无需后端，即开即用
+            </div>
+        </div>
+
+        <footer>
+            <span>🔍 数据来源：豆瓣电影 | 项目地址：<a href="https://github.com/lzhpang/Douban-CineMatrix" target="_blank" style="color:#ffb347;">GitHub 仓库</a></span><br>
+            <span style="font-size:0.75rem;">💡 提示：词云图片需重新运行 <code>nlp_pipeline.py</code> 生成 </span>
+        </footer>
+    </div>
+</body>
+</html>
